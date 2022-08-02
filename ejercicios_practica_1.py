@@ -31,16 +31,28 @@ def ej1():
 
     # Una vez armado el diccionario imprimirlo en pantalla con print
 
-    # Comenzar aquí, recuerde el identado dentro de esta funcion
+    # Comenzar aquí, recuerde el identado dentro de esta funcion 
 
+    stock = {} 
+    stock['tornillos'] = '100'
+    stock['tuercas'] = '150'
+    stock['arandelas'] = '300'
+    
+    print(stock)
 
 def ej2():
     print('Ejercicio con diccionarios 2º')
     # Basado en el ejercicio anterior ej1, utilizaremos el diccionario
     # como una base de datos. Comenzaremos con un diccionario de stock
     # de nuestros productos en cero:
+    stock = {} 
+    stock['tornillos'] = '100'
+    stock['tuercas'] = '150'
+    stock['arandelas'] = '300' 
+    agregar_productos = "inicio"
     
-    strock = {'tornillos': 0, 'tuercas': 0, 'arandelas': 0}
+    
+   
 
     # Paso 1:
     # Crear un bucle utilizando while que se ejecute de forma infinita
@@ -66,9 +78,47 @@ def ej2():
     # imprimir en pantalla con print el diccionario con el stock final
 
     # Comenzar aquí, recuerde el identado dentro de esta funcion
+   
+    while True:
+            
+            agregar_productos = str(input('Que producto desea ingresar\n')) 
+            control = 0 # si control es 0 no existe
+                       
+            for k,v in stock.items ():
+                if k == agregar_productos:
+                    control += 1 # si control = 1 ,el articulo existe
+
+            if control >= 1:
+
+                 for k,v in stock.items ():
+                    if k == agregar_productos: 
+                        cantidad = int(input('Cuantos productos desea ingresar\n')) 
+                        total_acumulado = int(v) + cantidad 
+                        stock[agregar_productos] = total_acumulado 
+                        agregar_productos = "fin" 
+            elif agregar_productos == "fin":
+                break
+            else:
+                print("el articulo ingresado no existe") 
+    print("El stock es:" ,stock) 
 
 
+                        
 if __name__ == '__main__':
     print("Bienvenidos a otra clase de Inove con Python")
     ej1()
-    ej2()
+    ej2()                 
+               
+
+
+           
+
+    
+                     
+                     
+
+       
+        
+
+
+
