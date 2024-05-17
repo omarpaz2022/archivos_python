@@ -64,7 +64,8 @@ def write_csv():
     fila = {'nombre': mi_nombre, 'apellido': mi_apellido}
     fila['nombre'] = mi_nombre
     writer.writerow(fila)
-    writer.writerow({'apellido': 'School', 'nombre': 'Inove', 'numero': '12345678'})
+    writer.writerow({'apellido': 'School', 'nombre': 'Inove', \
+                         'numero': '12345678'})
 
     csvfile.close()
 
